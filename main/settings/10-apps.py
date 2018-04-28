@@ -10,12 +10,10 @@ INSTALLED_APPS = (
   'django.contrib.staticfiles',
   'django.contrib.sites',
 
-  'compressor',
-  'crop_override',
-  'sorl.thumbnail',
-
+  'user',
 )
 
+AUTH_USER_MODEL = 'user.User'
 # Django Suit configuration example
 SUIT_CONFIG = {
   # header
