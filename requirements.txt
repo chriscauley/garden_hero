@@ -1,0 +1,13 @@
+django==1.11.12
+django-suit
+
+django-compressor
+sorl-thumbnail
+-e git+https://github.com/chriscauley/Django-Crop-Override-Field.git#egg=django-crop-override-field
+pillow
+lablackey==0.1.4
+
+markdown
+html2text
+
+django-jsonfield

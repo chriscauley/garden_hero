@@ -1,0 +1,15 @@
+<uwsgi>
+  <pythonpath>/home/django/</pythonpath>
+  <pythonpath>/home/django/{{ project_name }}/</pythonpath>
+  <chdir>/home/django/{{ project_name }}/</chdir>
+  <socket>127.0.0.1:3031</socket>
+  <processes>2</processes>
+  <app mountpoint="/">
+    <script>django_uwsgi.application</script>
+  </app>
+  <plugin>python</plugin>
+  <harakiri>180</harakiri>
+  <socket-timeout>180</socket-timeout>
+  <pidfile>/tmp/{{ project_name }}_uwsgi.pid</pidfile>
+  <module>django_uwsgi:application</module>
+</uwsgi>
