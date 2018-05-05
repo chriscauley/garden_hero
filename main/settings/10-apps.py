@@ -11,6 +11,8 @@ INSTALLED_APPS = (
   'django.contrib.sites',
 
   'user',
+  'garden',
+  'membership',
 )
 
 AUTH_USER_MODEL = 'user.User'
