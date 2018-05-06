@@ -1,8 +1,12 @@
 # Installation Instructions
 
-Before starting you'll need to install pip and sqlite3. Instructions for this vary from platform to platform, so I'm not going to even try do describe them here.
+Before starting you'll need to install git, pip, and sqlite3. Instructions for this vary from platform to platform, so I'm not going to even try do describe them here.
 
 ```
+sudo easy_install pip # if pip not already installed
+
+git clone https://github.com/chriscauley/garden_hero.git
+
 sudo pip install virtualenv # if not already installed
 
 virtualenv .e # or whatever you want for a virtualenvironment

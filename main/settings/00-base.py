@@ -3,8 +3,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SECRET_KEY = '8d&j_3zjc^4!)+3_s0!waya72jhx8j=3iryhexz=uq)9t)vbcs'
 
-DEBUG = False
-
 ALLOWED_HOSTS = ["*"]
 
 MIDDLEWARE_CLASSES = [
@@ -97,3 +95,7 @@ COMPRESS_PRECOMPILERS = [
 ]
 
 FAVICON = '/static/favicon.ico'
+
+DEBUG = THUMBNAIL_DEBUG = True
+
+COMPRESS_ENABLED = COMPRESS_OFFLINE = False
