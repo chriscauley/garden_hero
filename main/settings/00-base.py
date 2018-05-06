@@ -94,7 +94,7 @@ COMPRESS_PRECOMPILERS = [
   ('text/less', "lessc {infile} {outfile} --line-numbers=comments;autoprefixer-cli {outfile} -o {outfile}"),
 ]
 
-FAVICON = '/static/favicon.ico'
+FAVICON = '/static/devicon.ico'
 
 DEBUG = THUMBNAIL_DEBUG = True
 
