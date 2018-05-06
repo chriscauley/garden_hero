@@ -11,7 +11,7 @@ class MembershipAdmin(admin.ModelAdmin):
 
 @admin.register(Subscription)
 class SubscriptionAdmin(admin.ModelAdmin):
-  pass
+  readonly_fields = ("owed","subscr_id","canceled")
 
 @admin.register(Status)
 class StatusAdmin(admin.ModelAdmin):
