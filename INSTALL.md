@@ -1,13 +1,19 @@
 # Installation Instructions
 
+Before starting you'll need to install pip and sqlite3. Instructions for this vary from platform to platform, so I'm not going to even try do describe them here.
+
 ```
+sudo pip install virtualenv # if not already installed
+
 virtualenv .e # or whatever you want for a virtualenvironment
 
 source .e/bin/activate # you'll do this everytime you need to run manage.py
 
 pip install -r requirements.txt
 
-python manage.py migrate
-
-python manage.py createsuperuser # follow the prompts
+python manage.py shell
 ```
+
+If everything is working properly you should see a python prompt. Exit with `ctrl+d` and get a dummy copy of the database from me and copy it to `main/db.sqlite3`. You can now start the server with:
+
+`python manage.py runserver`
