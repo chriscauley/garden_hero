@@ -3,16 +3,16 @@ from __future__ import unicode_literals
 
 from django.contrib import admin
 
-from models import Membership, UserMembership, Payment
+from models import Membership, Subscription, Status
 
 @admin.register(Membership)
 class MembershipAdmin(admin.ModelAdmin):
   pass
 
-@admin.register(UserMembership)
-class UserMembershipAdmin(admin.ModelAdmin):
+@admin.register(Subscription)
+class SubscriptionAdmin(admin.ModelAdmin):
   pass
 
-@admin.register(Payment)
-class PaymentAdmin(admin.ModelAdmin):
+@admin.register(Status)
+class StatusAdmin(admin.ModelAdmin):
   pass
