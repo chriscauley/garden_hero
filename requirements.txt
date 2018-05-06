@@ -9,5 +9,6 @@ lablackey==0.1.4
 
 markdown
 html2text
+arrow
 
 django-jsonfield

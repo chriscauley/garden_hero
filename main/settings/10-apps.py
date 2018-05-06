@@ -13,6 +13,8 @@ INSTALLED_APPS = (
   'user',
   'garden',
   'membership',
+
+  #'drop',
 )
 
 AUTH_USER_MODEL = 'user.User'
