@@ -7,6 +7,6 @@ import lablackey.urls
 
 urlpatterns = [
   url(r'^auth/',include(auth_urls)),
-  url('^$', TemplateView.as_view(template_name='index.html')),
+  url('^$', TemplateView.as_view(template_name='base.html')),
   url(r'',include(lablackey.urls)),
 ]
