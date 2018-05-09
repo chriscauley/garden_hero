@@ -10,6 +10,8 @@
   </head>
   <div id="main">
     <h1>Garden Hero</h1>
+    {% block main %}{% endblock %}
+    {% csrf_token %}
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
