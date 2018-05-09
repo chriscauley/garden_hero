@@ -1,5 +1,8 @@
 django==1.11.12
+django-jsonfield
+django-localflavor-2.0
 django-suit
+djangorestframework
 
 django-compressor
 sorl-thumbnail
@@ -11,4 +14,3 @@ markdown
 html2text
 arrow
 
-django-jsonfield
