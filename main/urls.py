@@ -1,11 +1,11 @@
-from django.conf import settings
-from django.conf.urls import include, url
+from django.contrib import admin
+from django.urls import path, re_path
+from django.views.generic import TemplateView
 
-from django.contrib.auth import urls as auth_urls
 
-import lablackey.urls
 
 urlpatterns = [
-  url(r'^auth/',include(auth_urls)),
-  url(r'',include(lablackey.urls)),
+    path('admin/', admin.site.urls),
+  # path('api/', include('mynewapp.urls')),
+  re_path('.*', TemplateView.as_view(template_name='index.html')),
 ]
