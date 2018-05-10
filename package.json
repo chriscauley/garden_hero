@@ -1,0 +1,43 @@
+{
+  "name": "garden_hero",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-saga": "^0.16.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-es2015": "6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "eslint": "4.5.0",
+    "eslint-config-prettier": "2.3.0",
+    "eslint-loader": "1.9.0",
+    "eslint-plugin-prettier": "2.2.0",
+    "eslint-plugin-react": "7.2.1",
+    "html-webpack-plugin": "^2.30.1",
+    "jest": "^22.4.2",
+    "prettier": "1.5.3",
+    "uglifyjs-webpack-plugin": "^1.1.6",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
