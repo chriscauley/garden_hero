@@ -7,8 +7,6 @@ import App from 'components/App';
 import configureStore, { history } from 'utils/store/configureStore';
 // import './index.scss';
 
-console.warn(App);
-
 if (process.env.NODE_ENV !== 'production') {
   // Enable Hot Module Replacement
   if (module.hot) {

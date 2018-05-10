@@ -6,23 +6,11 @@ import { Route, Switch } from 'react-router-dom';
 
 import routes from 'routes';
 
-// import { actions as commonActions } from 'modules/application/common';
-// import { actions as contentActions } from 'modules/application/content';
-// import { actions as contractActions } from 'modules/account/contract';
-// import { actions } from 'modules/application';
-
-// import { resetPageView } from 'utils/util';
-
 export class AppContainer extends Component {
   static propTypes = {
-    actions: PropTypes.object.isRequired,
-    contract: PropTypes.object,
-    common: PropTypes.object.isRequired,
-    content: PropTypes.object.isRequired,
-    termCodes: PropTypes.object,
+    actions: PropTypes.object,
     history: PropTypes.object,
-    location: PropTypes.object,
-    users: PropTypes.object
+    location: PropTypes.object
   };
 
   constructor(props) {
@@ -31,22 +19,12 @@ export class AppContainer extends Component {
     this.actions = props.actions;
   }
 
-  componentWillMount() {
-    const { history } = this.props;
-
-    this.actions.loadData();
-    this.actions.setHistory(history);
-    this.actions.logoutListener();
-    this.actions.getInitialTerms();
-  }
-
   renderRoutes() {
     return (
       <Switch>
         {routes.map((route, index) => {
-          const { exact, path, layout, sidebar, theme, closeBtn } = route;
-          const Layout = layout;
-          const contentKey = route.contentKey;
+          const { exact, path } = route;
+          const RenderComponent = route.component;
 
           return (
             <Route
@@ -55,14 +33,10 @@ export class AppContainer extends Component {
               exact={exact}
               render={props => {
                 return (
-                  <Layout
-                    component={route.component}
+                  <RenderComponent
                     {...props}
-                    contentKey={contentKey}
+                    component={route.component}
                     path={path}
-                    sidebar={sidebar ? sidebar : null}
-                    theme={theme ? theme : null}
-                    closeBtn={closeBtn ? closeBtn : null}
                   />
                 );
               }}
@@ -75,23 +49,15 @@ export class AppContainer extends Component {
 
   render() {
     return (
-      <div
-        className="bcp-main-content min-content-height"
-        id="main"
-        role="main"
-      >
-        Hello
+      <div className="gh-main-content min-content-height" id="main" role="main">
+        {this.renderRoutes(this.context)}
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  common: state.application.common,
-  content: state.application.content,
-  contract: state.account.contract.data,
-  termCodes: state.account.contract.data.termCodes,
-  users: state.account.users
+  application: state.application
 });
 
 const mapDispatchToProps = dispatch => ({

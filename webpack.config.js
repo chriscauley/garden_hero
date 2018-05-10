@@ -1,16 +1,16 @@
 const path = require('path');
-// const webpack = require('webpack');
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
     main: ['babel-polyfill', './client/index.js']
   },
-  // devtool: 'cheap-module-eval-source-map',
+  devtool: 'cheap-module-eval-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'prod'),
     compress: true,
     disableHostCheck: true,
     host: 'localhost',
@@ -52,20 +52,20 @@ module.exports = {
     net: 'empty',
     process: true
   },
-  // plugins: [
-  //   new webpack.NamedModulesPlugin(),
-  //   new webpack.HotModuleReplacementPlugin(),
-  // new CleanWebpackPlugin(['dist'], {
-  //   verbose: false
-  // }),
-  // new HtmlWebpackPlugin({
-  //   title: 'Garden Hero',
-  //   template: './client/index.html'
-  // })
-  // new UglifyJsPlugin({
-  //   sourceMap: true
-  // })
-  // ],
+  plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new CleanWebpackPlugin(['prod'], {
+      verbose: false
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Garden Hero',
+      template: './client/index.html'
+    }),
+    new UglifyJsPlugin({
+      sourceMap: true
+    })
+  ],
   resolve: {
     modules: [path.resolve('./client'), path.resolve('./node_modules')],
     extensions: ['.js', '.jsx', '.json'],
@@ -74,7 +74,7 @@ module.exports = {
     }
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: 'main.bundle.js',
+    path: path.resolve(__dirname, 'prod/assets')
   }
 };
