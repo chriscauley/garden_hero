@@ -3,6 +3,7 @@ import { all, fork, take } from 'redux-saga/effects';
 function* initialSaga() {
   while (true) {
     const action = yield take('*');
+
     console.log('ACTION:', action);
   }
 }

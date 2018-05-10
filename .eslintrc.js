@@ -167,9 +167,7 @@ module.exports = {
         "prettier/prettier": [2, {
             "singleQuote": true
         }],
-        "no-console": [process.env.NODE_ENV === 'debug' ? 0 : 2, {
-            "allow": ["warn", "error"]
-        }],
+        "no-console": 0,
         "no-debugger": process.env.NODE_ENV === 'debug' ? 0 : 2
     }
 }
