@@ -14,6 +14,8 @@ INSTALLED_APPS = (
   'garden',
   'membership',
 
+  'lablackey.api',
+
   #'drop',
 )
 
