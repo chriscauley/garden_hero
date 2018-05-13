@@ -19,8 +19,13 @@ class User(AbstractUser):
   address2 = models.CharField(max_length=128,blank=True)
   city = models.CharField(max_length=64,blank=True)
   state = USStateField(null=True,blank=True)
-  is_garden_buddy = models.BooleanField(null=False,default=False)
+  parent = models.ForeignKey("self",null=True,blank=True,limit_choices_to={'parent__isnull': True})
+  def is_garden_buddy(self):
+    return self.parent
+
   def current_plots(self):
+    if self.parent:
+      return self.parent.current_plots()
     today = datetime.date.today()
     ums = self.subscription_set.filter(canceled__isnull=True)
     return [u.plot for u in ums]
@@ -34,20 +39,6 @@ class UserInvite(models.Model):
   created = models.DateTimeField(auto_now_add=True)
   accepted = models.DateTimeField(null=True,blank=True)
   uuid = models.CharField(max_length=32,default=get_uuid,editable=False)
-
-class GardenBuddy(User):
-  primary_user = models.ForeignKey('User', related_name='primary', limit_choices_to={'is_garden_buddy': False})
-
-  def current_plots(self):
-    return self.primary_user.current_plots()
-  
-  def save(self, *args, **kwargs):
-    self.is_garden_buddy = True
-    super(GardenBuddy, self).save(*args, **kwargs) # Call the real save() method
-
-  class Meta:
-    verbose_name = "garden buddy"
-    verbose_name_plural = "garden buddies"
 
 class Committee(models.Model):
   name = models.CharField(max_length=64)
