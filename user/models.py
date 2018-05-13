@@ -6,6 +6,8 @@ from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
 from localflavor.us.models import USStateField
 
+from membership.models import Subscription
+
 import datetime, uuid
 
 class User(AbstractUser):
@@ -16,6 +18,7 @@ class User(AbstractUser):
   address2 = models.CharField(max_length=128,blank=True)
   city = models.CharField(max_length=64,blank=True)
   state = USStateField(null=True,blank=True)
+  is_garden_buddy = models.BooleanField(null=False,default=False)
   def current_plots(self):
     today = datetime.date.today()
     ums = self.subscription_set.filter(canceled__isnull=True)
@@ -32,12 +35,12 @@ class UserInvite(models.Model):
   uuid = models.CharField(max_length=32,default=get_uuid,editable=False)
 
 class GardenBuddy(User):
-  primary_user = models.ForeignKey('User', related_name='primary')
+  primary_user = models.ForeignKey('User', related_name='primary', limit_choices_to={'is_garden_buddy': False})
 
   def save(self, *args, **kwargs):
-    # on save associate subscription of primary user with this garden buddy entry
-    self.current_plots = self.primary_user.current_plots
-    super(GardenBuddy, self).save(*args, **kwargs)
+     self.is_garden_buddy = True
+     
+     super(GardenBuddy, self).save(*args, **kwargs) # Call the real save() method
 
   class Meta:
     verbose_name = "garden buddy"

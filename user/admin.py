@@ -20,3 +20,4 @@ class UserInviteAdmin(admin.ModelAdmin):
 @admin.register(GardenBuddy)
 class GardenBuddyUserAdmin(admin.ModelAdmin):
   list_display = ('email','get_full_name','current_plots', 'primary_user')
+  exclude = ('is_garden_buddy',)
