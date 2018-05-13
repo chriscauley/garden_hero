@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 
-from models import User, UserInvite, GardenBuddy
+from models import User, UserInvite, GardenBuddy, Committee, CommitteeMembership
 
 @admin.register(User)
 class UserAdmin(UserAdmin):
@@ -21,3 +21,11 @@ class UserInviteAdmin(admin.ModelAdmin):
 class GardenBuddyUserAdmin(admin.ModelAdmin):
   list_display = ('email','get_full_name','current_plots', 'primary_user')
   exclude = ('is_garden_buddy',)
+
+@admin.register(Committee)
+class CommitteeAdmin(admin.ModelAdmin):
+  list_display = ('name', 'seat_limit')
+
+@admin.register(CommitteeMembership)
+class CommitteeAdmin(admin.ModelAdmin):
+  list_display = ('user', 'chair', 'start_date', 'end_date')

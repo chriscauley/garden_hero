@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.utils import timezone
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
@@ -47,6 +48,18 @@ class GardenBuddy(User):
   class Meta:
     verbose_name = "garden buddy"
     verbose_name_plural = "garden buddies"
+
+class Committee(models.Model):
+  name = models.CharField(max_length=64)
+  seat_limit = models.IntegerField(default=5)
+
+class CommitteeMembership(models.Model):
+  user = models.ForeignKey(User)
+  committee = models.ForeignKey(Committee)
+  chair = models.BooleanField(default=False)
+  start_date = models.DateField(default=timezone.now)
+  end_date = models.DateField
+  
 
 
 
