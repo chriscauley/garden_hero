@@ -53,12 +53,16 @@ class Committee(models.Model):
   name = models.CharField(max_length=64)
   seat_limit = models.IntegerField(default=5)
 
+  # TO-DO method to calculate if committee is full
+
 class CommitteeMembership(models.Model):
   user = models.ForeignKey(User)
   committee = models.ForeignKey(Committee)
   chair = models.BooleanField(default=False)
   start_date = models.DateField(default=timezone.now)
-  end_date = models.DateField
+  end_date = models.DateField(blank=True)
+
+  # TO-DO method to calculate length
   
 
 
