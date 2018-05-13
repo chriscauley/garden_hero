@@ -45,6 +45,7 @@ module.exports = {
       }
     ]
   },
+  mode: 'development',
   node: {
     dns: 'empty',
     global: true,
@@ -75,6 +76,7 @@ module.exports = {
   },
   output: {
     filename: 'main.bundle.js',
-    path: path.resolve(__dirname, 'prod/assets')
+    path: path.resolve(__dirname, 'prod/assets'),
+    pathinfo: false
   }
 };

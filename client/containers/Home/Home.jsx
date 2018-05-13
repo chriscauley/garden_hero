@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-const actions = {};
+import { actions } from 'modules/application';
 
 export class Home extends Component {
   static propTypes = {
@@ -15,6 +15,10 @@ export class Home extends Component {
 
     // Bind actions
     this.actions = props.actions;
+  }
+
+  componentDidMount() {
+    this.actions.loadData();
   }
 
   render() {
