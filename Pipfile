@@ -1,0 +1,26 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[dev-packages]
+
+
+
+[packages]
+
+Django = "==1.11.12"
+django-jsonfield = "*"
+django-localflavor = "==2.0"
+django-suit = "*"
+djangorestframework = "*"
+django_compressor = "*"
+sorl-thumbnail = "*"
+django-crop-override-field = {git = "https://github.com/chriscauley/Django-Crop-Override-Field.git", editable = true}
+Pillow = "*"
+lablackey = "==0.1.4"
+Markdown = "*"
+"html2text" = "*"
+arrow = "*"

@@ -29,4 +29,19 @@ class UserInvite(models.Model):
   email = models.EmailField()
   created = models.DateTimeField(auto_now_add=True)
   accepted = models.DateTimeField(null=True,blank=True)
-  uuid = models.CharField(max_length=32,default=get_uuid,editable=False)
+  uuid = models.CharField(max_length=32,default=get_uuid,editable=False)\
+
+class GardenBuddyUser(models.Model):
+  garden_buddy_owner = models.ForeignKey(
+    'User', 
+    on_delete=models.CASCADE,
+    related_name='primary',
+  )
+  garden_buddy = models.ForeignKey(
+    'User',
+    on_delete=models.CASCADE,
+    related_name='associated',
+  )
+
+
+
