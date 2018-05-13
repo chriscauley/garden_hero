@@ -75,4 +75,9 @@ class Status(models.Model):
   transaction_id = models.CharField(max_length=128,null=True,blank=True)
   datetime = models.DateTimeField(default=datetime.datetime.now)
   notes = models.TextField(blank=True)
-  __str__ = lambda self: "%s $%s"%(self.usermembership,self.amount)
+  __str__ = lambda self: "%s $%s %s"%(self.subscription,self.amount,"paid")
+
+  class Meta:
+    verbose_name = "status"
+    verbose_name_plural = "statuses"
+
