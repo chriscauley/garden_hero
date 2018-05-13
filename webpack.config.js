@@ -2,13 +2,13 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
     main: ['babel-polyfill', './client/index.js']
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval',
   devServer: {
     contentBase: path.join(__dirname, 'client'),
     compress: true,
@@ -62,10 +62,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Garden Hero',
       template: './client/index.html'
-    }),
-    new UglifyJsPlugin({
-      sourceMap: true
     })
+    // new UglifyJsPlugin({
+    //   sourceMap: true
+    // })
   ],
   resolve: {
     modules: [path.resolve('./client'), path.resolve('./node_modules')],
