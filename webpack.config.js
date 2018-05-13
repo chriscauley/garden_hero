@@ -66,7 +66,7 @@ module.exports = {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new CleanWebpackPlugin(['prod'], {
+    new CleanWebpackPlugin(['main/static'], {
       verbose: false
     }),
     new HtmlWebpackPlugin({
@@ -74,7 +74,8 @@ module.exports = {
       template: './client/index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: 'main.css'
+      filename: 'main.css',
+      chunkFilename: 'main.css'
     })
   ],
   resolve: {
@@ -91,12 +92,18 @@ module.exports = {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all'
+        },
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true
         }
       }
     }
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'prod')
+    path: path.resolve(__dirname, 'main/static')
   }
 };

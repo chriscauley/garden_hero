@@ -15,19 +15,20 @@
     "axios": "0.18.0",
     "babel-polyfill": "^6.26.0",
     "classnames": "2.2.5",
+    "extract-text-webpack-plugin": "^3.0.2",
     "history": "4.7.2",
     "lodash": "4.17.5",
     "moment": "2.22.0",
     "normalize-scss": "7.0.1",
     "prop-types": "^15.6.0",
+    "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "4.2.2",
-    "react": "^16.2.0",
     "redux": "^3.7.2",
     "redux-devtools-extension": "2.13.2",
-    "redux-saga": "^0.16.0",
-    "redux-form": "7.3.0"
+    "redux-form": "7.3.0",
+    "redux-saga": "^0.16.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
