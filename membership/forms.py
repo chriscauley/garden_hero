@@ -11,6 +11,9 @@ class ProfileForm(RequestModelForm):
 
 class RegistrationForm(RequestModelForm):
   uuid = forms.CharField(required=False,widget=forms.HiddenInput(),max_length=32)
+  @classmethod
+  def user_is_allowed(self,request):
+    return True
   def __init__(self,request,*args,**kwargs):
     kwargs['initial'] = kwargs.get("initial",None) or {}
     state = "PA"
