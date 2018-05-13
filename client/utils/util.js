@@ -1,4 +1,3 @@
-import React from 'react';
 import find from 'lodash/find';
 import flatten from 'lodash/flatten';
 import map from 'lodash/map';
