@@ -37,10 +37,12 @@ class UserInvite(models.Model):
 class GardenBuddy(User):
   primary_user = models.ForeignKey('User', related_name='primary', limit_choices_to={'is_garden_buddy': False})
 
+  def current_plots(self):
+    return self.primary_user.current_plots()
+  
   def save(self, *args, **kwargs):
-     self.is_garden_buddy = True
-     
-     super(GardenBuddy, self).save(*args, **kwargs) # Call the real save() method
+    self.is_garden_buddy = True
+    super(GardenBuddy, self).save(*args, **kwargs) # Call the real save() method
 
   class Meta:
     verbose_name = "garden buddy"
