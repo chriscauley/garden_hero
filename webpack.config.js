@@ -2,7 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const prodMode = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: {
@@ -17,6 +18,7 @@ module.exports = {
     hot: true,
     open: true,
     openPage: '',
+    overlay: true,
     port: 9000
   },
   module: {
@@ -42,10 +44,18 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          prodMode ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
   },
-  mode: 'development',
+  mode: prodMode ? 'production' : 'development',
   node: {
     dns: 'empty',
     global: true,
@@ -62,10 +72,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Garden Hero',
       template: './client/index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'main.css'
     })
-    // new UglifyJsPlugin({
-    //   sourceMap: true
-    // })
   ],
   resolve: {
     modules: [path.resolve('./client'), path.resolve('./node_modules')],
@@ -74,9 +84,19 @@ module.exports = {
       'lodash-es': 'lodash'
     }
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  },
   output: {
-    filename: 'main.bundle.js',
-    path: path.resolve(__dirname, 'prod/assets'),
-    pathinfo: false
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'prod')
   }
 };

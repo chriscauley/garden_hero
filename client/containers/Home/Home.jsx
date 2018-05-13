@@ -22,7 +22,11 @@ export class Home extends Component {
   }
 
   render() {
-    return <div className="gh-home">Home</div>;
+    return (
+      <div className="gh-home">
+        <h1>Homepage</h1>
+      </div>
+    );
   }
 }
 

@@ -5,7 +5,7 @@ import { Router } from 'react-router-dom';
 
 import App from 'components/App';
 import configureStore, { history } from 'utils/store/configureStore';
-// import './index.scss';
+import './index.scss';
 
 if (process.env.NODE_ENV !== 'production') {
   // Enable Hot Module Replacement

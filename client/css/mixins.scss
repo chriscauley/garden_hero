@@ -1,0 +1,146 @@
+// Help Functions -------
+@function em($target, $context: $baseFontSize) {
+    @return ($target / $context) * 1em;
+}
+
+//  Helper function to replace characters in a string
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1)+$replace+str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
+
+@function svg-url($svg) {
+    // Chunk up string in order to avoid
+    // "stack level too deep" error
+    $encoded: "";
+    $slice: 2000;
+    $index: 0;
+    $loops: ceil(str-length($svg)/$slice);
+    @for $i from 1 through $loops {
+        $chunk: str-slice($svg, $index, $index + $slice - 1); // Encode (may need a few extra replacements)
+        $chunk: str-replace($chunk, "<", "%3C");
+        $chunk: str-replace($chunk, ">", "%3E");
+        $chunk: str-replace($chunk, "&", "%26");
+        $chunk: str-replace($chunk, "#", "%23");
+        $encoded: #{$encoded}#{$chunk};
+        $index: $index + $slice;
+    }
+    @return url("data:image/svg+xml;charset=utf8,#{$encoded}");
+}
+
+// Break-point Mixin
+@mixin responsive($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
+// Type Size Mixins -----------
+@mixin heading-xl {
+    font-size: em($fontSizeXLarge);
+    line-height: 1;
+}
+
+@mixin heading-l {
+    font-size: em($fontSizeLarge);
+    line-height: 1.3;
+}
+
+@mixin heading-s {
+    font-size: em($fontSizeSmall);
+    line-height: 1.4;
+}
+
+@mixin body-copy {
+    font-size: em($fontSizeRegular);
+    line-height: 1.2;
+}
+
+@mixin body-copy-s {
+    font-size: em($fontSizeSmall);
+    line-height: 1.2;
+}
+
+@mixin row-gutter($breakpoint: $widthMedium) {
+    margin: 0 0 em(10px);
+    @include responsive($breakpoint) {
+        margin: 0 0 em(20px);
+    }
+}
+
+//-----------------------------
+// Flexbox Mixins
+//-----------------------------
+// Wraps, Justifies Space-between
+@mixin flex-split($breakpoint: null) {
+    @if $breakpoint==null {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+    }
+    @else {
+        @include responsive($breakpoint) {
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row wrap;
+        }
+    }
+}
+
+// Row Wraps, Justifies Flex-Start
+@mixin flex-start($breakpoint: null) {
+    @if $breakpoint==null {
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: row wrap;
+    }
+    @else {
+        @include responsive($breakpoint) {
+            display: flex;
+            justify-content: flex-start;
+            flex-flow: row wrap;
+        }
+    }
+}
+
+// Assumes flex flow set to row
+@mixin flex-center {
+    align-items: center;
+}
+
+// Assumes flex flow set to row
+@mixin flex-item-end {
+    align-self: flex-end;
+}
+
+// Pseudo Dropdown Icon
+@mixin pseudo-dropdown-icon {
+    &::before,
+    &::after {
+        content: "";
+        z-index: 2;
+        position: absolute;
+    }
+    &::after {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        display: block;
+        width: 30px;
+        pointer-events: none;
+    }
+    &::before {
+        content: "";
+        top: 0.85em;
+        right: 0.65em;
+        width: 1em;
+        height: 1em;
+        background-image: svg-url($iconArrowDownBlue);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,45 @@
+.bcp-heading {
+    display: block;
+    margin-bottom: em(10px);
+    color: $grayDark;
+    &--inline {
+        display: inline;
+    }
+    &--xl {
+        @include heading-xl;
+        font-weight: $fontWeightLight;
+    }
+    &--l {
+        @include heading-l;
+        font-weight: $fontWeightRegular;
+    }
+    &--s {
+        @include heading-s;
+        font-weight: $fontWeightRegular;
+    }
+    &--bold {
+        font-weight: $fontWeightBold;
+    }
+    &--success {
+        color: $green;
+    }
+    &--error {
+        color: $red;
+    }
+    &--section {
+        display: flex;
+        align-items: center;
+        margin-bottom: em(30px);
+        line-height: 1;
+        >.bcp-icon {
+            fill: $grayDark;
+            margin-right: 0.5em;
+        }
+        .divider {
+            flex: 2;
+            border-top: 1px solid $grayMedium;
+            margin-left: 20px;
+            height: 1px;
+        }
+    }
+}

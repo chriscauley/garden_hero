@@ -1,0 +1,53 @@
+// $fontPath: "https://edge.static-assets.top.comcast.net/staticsites/fonts/latest"
+//   !default;
+$fontFamily: 'arial, sans-serif';
+// Type Sizes ------------
+$fontSizeXLarge: 23px;
+$fontSizeLarge: 19px;
+$fontSizeRegular: 16px;
+$fontSizeSmall: 14px;
+$bodyCopy: $fontSizeRegular;
+$baseFontSize: $fontSizeRegular;
+// Font Weights
+$fontWeightLight: 300;
+$fontWeightRegular: 400;
+$fontWeightBold: 700;
+// Colors ---------------
+$black: #000;
+$white: #fff;
+$offWhite: #f8f8f8;
+$gray: #edefef;
+$grayBright: #cecece;
+$grayDark: #3b3b3b;
+$grayHeavy: #545f62;
+$grayMedium: #a5afb8;
+$midnight: #041f35;
+$blueDark: #082f4a;
+$blueGray: #dbe6ed;
+$blue: #0e79c4;
+$blueBright: #35a7f7;
+$red: #d32103;
+$redBright: #ff4c4a;
+$redDark: #b20000;
+$yellow: #fad14f;
+$green: #5ea127;
+$greenBright: #92c45a;
+$inactiveGray: #f8f8f8;
+// Border Standards
+$borderRadius: 3px;
+$borderWidth: 1px;
+//-------------------------
+//	MEDIA QUERY VARIABLES
+//-------------------------
+$widthSmall: 480px;
+$widthMedium: 720px;
+$widthLarge: 960px;
+$widthXLarge: 1200px;
+// Psuedo element background images
+$iconArrowDown: "<svg xmlns='http://www.w3.org/2000/svg' class='symbol-arrow-down' width='15' height='15' viewBox='0 0 26 13'><path d='M0 .64A.63.63 0 0 1 1.08.19L12 11.11 22.92.19a.63.63 0 0 1 .89.89L12.45 12.45a.63.63 0 0 1-.89 0L.18 1.08A.63.63 0 0 1 0 .63z' /></svg>";
+$iconArrowDownBlue: "<svg xmlns='http://www.w3.org/2000/svg' class='symbol-arrow-down' width='15' height='15' viewBox='0 0 26 13'><path stroke='#{$blue}' d='M0 .64A.63.63 0 0 1 1.08.19L12 11.11 22.92.19a.63.63 0 0 1 .89.89L12.45 12.45a.63.63 0 0 1-.89 0L.18 1.08A.63.63 0 0 1 0 .63z' /></svg>";
+$iconCheckWhite: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='-379.5 220 180 180'><path fill='#{$white}' d='M-311.7 349.5c-1.7 0-3.4-.8-4.4-2.1l-27.6-33.9c-2-2.4-1.6-6 .8-8 2.4-2 6-1.6 8 .8l23.2 28.5 56.5-68.3c2-2.4 5.6-2.8 8-.8 2.4 2 2.8 5.6.8 8l-61 73.6c-1 1.5-2.6 2.2-4.3 2.2z'/></svg>";
+$iconCheckBlue: "<svg xmlns='http://www.w3.org/2000/svg' viewBox='-379.5 220 180 180'><path fill='#{$blue}' d='M-311.7 349.5c-1.7 0-3.4-.8-4.4-2.1l-27.6-33.9c-2-2.4-1.6-6 .8-8 2.4-2 6-1.6 8 .8l23.2 28.5 56.5-68.3c2-2.4 5.6-2.8 8-.8 2.4 2 2.8 5.6.8 8l-61 73.6c-1 1.5-2.6 2.2-4.3 2.2z'/></svg>";
+$iconCheckDash: "<svg xmlns='http://www.w3.org/2000/svg' className='symbol-minus' width='25' height='25' viewBox='0 0 24 1'><path fill='#{$blue}' d='M23.5 0H.5a.5.5 0 0 0 0 1h23a.5.5 0 0 0 0-1z' /></svg>";
+$iconSearch: "<svg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'><path stroke='#{$blue}' d='M24.804 24.07l-9.325-9.325c3.25-3.658 2.92-9.257-.736-12.507-3.656-3.25-9.255-2.92-12.505.736-3.25 3.657-2.922 9.255.734 12.505 3.356 2.983 8.414 2.983 11.77 0l9.325 9.324c.2.204.53.204.734 0 .202-.203.202-.533 0-.734zM8.9 16.66c-4.29 0-7.77-3.48-7.77-7.77S4.61 1.12 8.9 1.12c4.29 0 7.77 3.48 7.77 7.77-.005 4.29-3.482 7.765-7.77 7.77z'/></svg>";
+$iconSortArrowDown: "<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><g stroke='#{$blue}' stroke-linecap='round' stroke-linejoin='round' fill='none'><path d='M12.501 23.498v-23M1.501 10.998l11 12.5 11-12.5'/></g></svg>";

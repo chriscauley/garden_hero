@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Heading /> accepts className prop 1`] = `
+<span
+  className="bcp-heading bcp-heading--l bcp-margin-top"
+>
+  Welcome
+</span>
+`;
+
+exports[`<Heading /> accepts modifier prop 1`] = `
+<span
+  className="bcp-heading bcp-heading--inline bcp-heading--l"
+>
+  Welcome
+</span>
+`;
+
+exports[`<Heading /> accepts size prop 1`] = `
+<span
+  className="bcp-heading bcp-heading--l"
+>
+  Welcome
+</span>
+`;
+
+exports[`<Heading /> accepts status prop 1`] = `
+<span
+  className="bcp-heading bcp-heading--l bcp-heading--success"
+>
+  Welcome
+</span>
+`;
+
+exports[`<Heading /> renders child elements 1`] = `
+<span
+  className="bcp-heading bcp-heading--l"
+>
+  Welcome 
+  <i />
+</span>
+`;
+
+exports[`<Heading /> renders correctly 1`] = `
+<span
+  className="bcp-heading bcp-heading--l"
+>
+  Welcome
+</span>
+`;
+
+exports[`<Heading /> renders section heading 1`] = `
+<span
+  className="bcp-heading bcp-heading--l bcp-heading--section"
+>
+  Welcome
+  <span
+    className="divider"
+  />
+</span>
+`;
