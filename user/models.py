@@ -18,7 +18,7 @@ class User(AbstractUser):
   state = USStateField(null=True,blank=True)
   def current_plots(self):
     today = datetime.date.today()
-    ums = self.subscription_set.filter(start_date__gte=today,canceled__isnull=True)
+    ums = self.subscription_set.filter(canceled__isnull=True)
     return [u.plot for u in ums]
 
 def get_uuid():
@@ -29,19 +29,19 @@ class UserInvite(models.Model):
   email = models.EmailField()
   created = models.DateTimeField(auto_now_add=True)
   accepted = models.DateTimeField(null=True,blank=True)
-  uuid = models.CharField(max_length=32,default=get_uuid,editable=False)\
+  uuid = models.CharField(max_length=32,default=get_uuid,editable=False)
 
-class GardenBuddyUser(models.Model):
-  garden_buddy_owner = models.ForeignKey(
-    'User', 
-    on_delete=models.CASCADE,
-    related_name='primary',
-  )
-  garden_buddy = models.ForeignKey(
-    'User',
-    on_delete=models.CASCADE,
-    related_name='associated',
-  )
+class GardenBuddy(User):
+  primary_user = models.ForeignKey('User', related_name='primary')
+
+  def save(self, *args, **kwargs):
+    # on save associate subscription of primary user with this garden buddy entry
+    self.current_plots = self.primary_user.current_plots
+    super(GardenBuddy, self).save(*args, **kwargs)
+
+  class Meta:
+    verbose_name = "garden buddy"
+    verbose_name_plural = "garden buddies"
 
 
 
