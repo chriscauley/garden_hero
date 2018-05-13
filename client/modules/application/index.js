@@ -3,10 +3,10 @@ const moduleName = 'application';
 
 // Action Types
 export const types = buildActionNames(moduleName, [
-  ('REQUEST_START', 'LOAD_DATA', 'LOAD_DATA_SUCCESS')
+  'REQUEST_START',
+  'LOAD_DATA',
+  'LOAD_DATA_SUCCESS'
 ]);
-
-console.warn('types', types);
 
 // Action Creators
 const startRequest = payload => ({
@@ -23,7 +23,6 @@ const loadDataSuccess = () => {
 };
 
 export const actions = { startRequest, loadData, loadDataSuccess };
-console.warn('types', types);
 
 const initialState = {};
 

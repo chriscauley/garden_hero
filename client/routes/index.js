@@ -1,5 +1,5 @@
 import HomeView from 'pages/HomeView';
-// import ErrorView from 'pages/ErrorView';
+import ErrorView from 'pages/ErrorView';
 
 // Export global Path references for use in routing, redirection, etc.
 export const appPaths = {
@@ -7,7 +7,7 @@ export const appPaths = {
   logout: '/logout'
 };
 
-const routes = [
+let routes = [
   {
     path: '/',
     exact: true,
@@ -15,13 +15,13 @@ const routes = [
   }
 ];
 
-// routes = [
-//   ...routes
-//   // {
-//   //   component: ErrorView,
-//   //   layout: Error,
-//   //   contentKey: 'pages.notFound'
-//   // }
-// ];
+// Catch-all 404 Error Page
+routes = [
+  ...routes,
+  {
+    component: ErrorView,
+    layout: Error
+  }
+];
 
 export default routes;

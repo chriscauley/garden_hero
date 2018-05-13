@@ -10,7 +10,7 @@ module.exports = {
   },
   devtool: 'cheap-module-eval-source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'prod'),
+    contentBase: path.join(__dirname, 'client'),
     compress: true,
     disableHostCheck: true,
     host: 'localhost',
