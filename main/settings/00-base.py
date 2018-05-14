@@ -17,7 +17,9 @@ MIDDLEWARE_CLASSES = [
 TEMPLATES = [
   { 
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
-    'DIRS': [],
+    'DIRS': [
+        os.path.join(BASE_DIR, '..', 'build')
+    ],
     'APP_DIRS': True,
     'OPTIONS': {
       'context_processors': [
@@ -88,6 +90,10 @@ STATICFILES_FINDERS = (
   # other finders..
   'compressor.finders.CompressorFinder',
 )
+
+STATICFILES_DIRS = [
+  os.path.join(BASE_DIR, '..', 'build/static'),
+]
 
 LESS_EXECUTABLE = 'lessc'
 COMPRESS_PRECOMPILERS = [

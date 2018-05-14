@@ -1,13 +1,16 @@
 ###Sitemap
 
 *   **Login** `"/"`
-*   back-end endpoint: `"/api"`
+*   schema endpoint: `"GET:/api/schema/membership.SigninForm/"` # not ready
+*   back-end endpoint: `"POST:/api/schema/membership.SigninForm/"` # not ready
 *   redirect to `"/members/:id"`
 *   **SignUp** `"/new"`
-    *   back-end endpoint: `"/api/new"`
-    *   redirect to `"/members/:id"`
+    *   schema endpoint: `GET:"/api/schema/membership.RegistrationForm/"`
+    *   back-end endpoint: `POST:"/api/schema/membership.RegistrationForm/"`
+    *   redirect to `"/memebers/:id"`
 *   **User Profile** `"/members/:id"`
-    *   back-end endpoint: `"api/members/:id"`
+    *   schema endpoint: `GET:"/api/schema/membership.ProfileForm/"`
+    *   back-end endpoint: `POST:"/api/schema/membership.ProfileForm/"`
     *   users can update/delete their info
 *   **Bed Assignment** `"/beds"`
     *   back-end endpoint: `"api/beds"`
