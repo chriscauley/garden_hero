@@ -66,7 +66,7 @@ module.exports = {
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new CleanWebpackPlugin(['main/static'], {
+    new CleanWebpackPlugin(['public'], {
       verbose: false
     }),
     new HtmlWebpackPlugin({
@@ -104,6 +104,6 @@ module.exports = {
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'main/static')
+    path: path.resolve(__dirname, 'public')
   }
 };
