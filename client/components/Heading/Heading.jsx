@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import { buildClassName } from 'utils/util';
-import { headingProps, statusProps } from 'utils/propTypeEnum';
+
+const headingProps = {
+  modifiers: ['inline', 'bold'],
+  sizes: ['xl', 'l', 's']
+};
+
+const statusProps = {
+  types: ['success', 'error', 'disabled']
+};
 
 class Heading extends Component {
   static propTypes = {
@@ -33,7 +41,7 @@ class Heading extends Component {
       section,
       ...props
     } = this.props;
-    const mainClass = 'bcp-heading';
+    const mainClass = 'gh-heading';
     const modifierClass = buildClassName(
       headingProps.modifiers,
       modifier,

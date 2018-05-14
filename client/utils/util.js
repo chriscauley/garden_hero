@@ -14,6 +14,14 @@ export function buildActionNames(module, actionList) {
   return collection;
 }
 
+export function buildClassName(array, item, prefix) {
+  if (array.includes(item)) {
+    return `${prefix}--${item}`;
+  }
+
+  return false;
+}
+
 export function resetPageView() {
   const pageContent = document.getElementById('content');
 

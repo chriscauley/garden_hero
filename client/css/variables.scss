@@ -1,6 +1,8 @@
 // $fontPath: "https://edge.static-assets.top.comcast.net/staticsites/fonts/latest"
 //   !default;
-$fontFamily: 'arial, sans-serif';
+$fontFamily: 'Nunito',
+arial,
+sans-serif;
 // Type Sizes ------------
 $fontSizeXLarge: 23px;
 $fontSizeLarge: 19px;
@@ -16,23 +18,23 @@ $fontWeightBold: 700;
 $black: #000;
 $white: #fff;
 $offWhite: #f8f8f8;
-$gray: #edefef;
-$grayBright: #cecece;
-$grayDark: #3b3b3b;
-$grayHeavy: #545f62;
-$grayMedium: #a5afb8;
-$midnight: #041f35;
-$blueDark: #082f4a;
-$blueGray: #dbe6ed;
-$blue: #0e79c4;
-$blueBright: #35a7f7;
+$gray: #BDC3C7;
+$grayBright: #D9E1E6;
+$grayDark: #3B3F45;
+$blue: #3498DB;
+$blueDark: #21608B;
+$blueBright: #A4D5F5;
 $red: #d32103;
 $redBright: #ff4c4a;
 $redDark: #b20000;
-$yellow: #fad14f;
-$green: #5ea127;
-$greenBright: #92c45a;
+$orangeBright: #FDC6B1;
+$orange: #FF7F50;
+$orangeDark: #A95536;
+$green: #2ECC91;
+$greenDark: #176447;
+$greenBright: #9EEBCE;
 $inactiveGray: #f8f8f8;
+$transGreen: rgba(24, 107, 76, 90);
 // Border Standards
 $borderRadius: 3px;
 $borderWidth: 1px;

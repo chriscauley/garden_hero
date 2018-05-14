@@ -1,7 +1,10 @@
-.bcp-heading {
+.gh-heading {
     display: block;
     margin-bottom: em(10px);
     color: $grayDark;
+    &:last-child {
+        margin-bottom: 0;
+    }
     &--inline {
         display: inline;
     }
@@ -31,13 +34,13 @@
         align-items: center;
         margin-bottom: em(30px);
         line-height: 1;
-        >.bcp-icon {
+        >.gh-icon {
             fill: $grayDark;
             margin-right: 0.5em;
         }
         .divider {
             flex: 2;
-            border-top: 1px solid $grayMedium;
+            border-top: 1px solid $gray;
             margin-left: 20px;
             height: 1px;
         }

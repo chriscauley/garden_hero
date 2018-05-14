@@ -48,7 +48,7 @@
       background-color: $blueBright;
     }
     &[disabled] {
-      background-color: $grayMedium;
+      background-color: $gray;
     }
   }
   &--secondary {
@@ -62,17 +62,17 @@
     }
   }
   &--disabled {
-    background-color: $grayMedium;
+    background-color: $gray;
     cursor: default;
     &:hover,
     &:focus,
     &:active {
-      background-color: $grayMedium;
+      background-color: $gray;
     }
     &.bcp-btn--secondary {
       background-color: transparent;
-      border-color: $grayHeavy;
-      color: $grayHeavy;
+      border-color: $grayDark;
+      color: $grayDark;
     }
   }
   &--full-width {

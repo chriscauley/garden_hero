@@ -1,12 +1,12 @@
 // Global styles
 @import "~normalize-scss/sass/normalize/import-now";
+// @import url('//fonts.googleapis.com/css?family=Nunito');
 @import "css/variables";
 @import "css/mixins";
 @import "css/global";
 @import "css/print";
-
-
 // Import component styles here
 @import "components/BodyCopy/BodyCopy";
 @import "components/Button/Button";
 @import "components/Heading/Heading";
+@import "components/Nav/Nav";

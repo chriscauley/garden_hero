@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import Nav from 'components/Nav/Nav';
 import { actions } from 'modules/application';
 
 export class Home extends Component {
@@ -24,7 +25,7 @@ export class Home extends Component {
   render() {
     return (
       <div className="gh-home">
-        <h1>Homepage</h1>
+        <Nav />
       </div>
     );
   }
