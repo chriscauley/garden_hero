@@ -92,7 +92,7 @@ STATICFILES_FINDERS = (
 )
 
 STATICFILES_DIRS = [
-  os.path.join(BASE_DIR, '..', 'build/static'),
+  os.path.join(BASE_DIR, '..', 'public/static'),
 ]
 
 LESS_EXECUTABLE = 'lessc'

@@ -1,0 +1,140 @@
+// sass-lint:disable no-universal-selectors, single-line-per-selector
+html {
+  box-sizing: border-box;
+}
+
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body {
+  font-family: $fontFamily;
+  font-size: $baseFontSize;
+  color: $grayDark;
+  background-color: $white;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin-top: 0;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+ul,
+ol {
+  @include body-copy;
+  margin-left: 1.063em;
+  padding-left: 0;
+}
+
+ul {
+  list-style: disc;
+  list-style-position: outside;
+  &.list-unstyled {
+    margin-left: 0;
+    list-style: none;
+  }
+}
+
+li {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  cursor: pointer;
+  &.bcp-btn--primary {
+    color: $white;
+    text-align: center;
+    &:hover {
+      color: $white;
+    }
+  }
+  &:hover {
+    color: $blueBright;
+  }
+}
+
+strong {
+  // Default font-weight fallback
+  font-weight: $fontWeightBold;
+}
+
+// Form Elements --------------
+input,
+textarea,
+select,
+button {
+  font-family: $fontFamily;
+  font-size: 1em;
+}
+
+input,
+select,
+textarea {
+  &:focus {
+    box-shadow: 0 0 1px 1px $blueBright;
+    outline: none;
+    border: 1px solid $blueBright;
+  }
+}
+
+a,
+button {
+  &:not([disabled]) {
+    &:focus {
+      outline: 2px dotted $grayDark;
+    }
+  }
+}
+
+fieldset {
+  display: inline;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+table th {
+  font-weight: $fontWeightRegular;
+}
+
+.visibly-hidden {
+  position: absolute;
+  display: block;
+  visibility: visible;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+}
+
+.is-hidden {
+  display: none;
+}
+
+.min-content-height {
+  min-height: 300px;
+}

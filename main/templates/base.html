@@ -1,19 +1,25 @@
-<html>
-  <head>
-    <title>Garden Hero</title>
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-    <link href="/static/less/base.less" rel="stylesheet/less" type="text/css"></link>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.7.2/less.min.js"></script>
-    <link type="image/x-icon" rel="shortcut icon" href="/static/favicon.ico" />
-  </head>
-  <div id="main">
-    <h1>Garden Hero</h1>
-    {% block main %}{% endblock %}
-    {% csrf_token %}
-  </div>
+<!doctype html>
+<html class="no-js" lang="">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-  <script src="/static/js/main.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Garden Hero</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" rel="stylesheet" />
+  <link href="//fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+  <link href="/static/main.css" rel="stylesheet" type="text/css" />
+  <link type="image/x-icon" rel="shortcut icon" href="/static/favicon.ico" />
+</head>
+
+<div id="root"></div>
+
+<!-- Not sure what the following is doing? The root div is all we need to mount the React application. -->
+<div id="main">{% block main %}{% endblock %} {% csrf_token %</div>
+
+
+<script type="text/javascript" src="/static/js/main.bundle.js"></script>
+
 </html>

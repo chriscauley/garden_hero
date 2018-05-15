@@ -1,0 +1,90 @@
+.bcp-btn {
+  @include body-copy;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  @include responsive($widthMedium) {
+    display: inline-block;
+    width: auto;
+  } // Adds Spacing between sibling buttons only on mobile
+  &~& {
+    margin-top: em(15px);
+    @include responsive($widthMedium) {
+      margin-top: 0;
+    }
+  }
+  &--anchor,
+  &--anchor-block {
+    color: $blue;
+  }
+  &--anchor {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+  }
+  &--anchor-block {
+    display: block;
+    width: 100%;
+    padding: 1.158em;
+  }
+  &--primary,
+  &--secondary {
+    min-width: 9em;
+    padding: 0.684em 1.579em 0.632em;
+    border-radius: 5em;
+    &.bcp-btn--s {
+      padding: 0.625em 1.875em;
+    }
+  }
+  &--primary {
+    background-color: $blue;
+    color: $white;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $blueBright;
+    }
+    &[disabled] {
+      background-color: $gray;
+    }
+  }
+  &--secondary {
+    border: 1px solid $blue;
+    color: $blue;
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: $blueBright;
+      color: $blueBright;
+    }
+  }
+  &--disabled {
+    background-color: $gray;
+    cursor: default;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $gray;
+    }
+    &.bcp-btn--secondary {
+      background-color: transparent;
+      border-color: $grayDark;
+      color: $grayDark;
+    }
+  }
+  &--full-width {
+    width: 100%;
+  }
+  &--xl {
+    @include heading-xl;
+  }
+  &--l {
+    @include heading-l;
+  }
+  &--s {
+    @include heading-s;
+  }
+}
