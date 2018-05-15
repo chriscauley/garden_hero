@@ -4,15 +4,6 @@ from lablackey.forms import RequestModelForm,RequestForm
 
 from user.models import User, UserInvite
 
-class SigninForm(RequestForm):
-  username = forms.CharField(max_length=64)
-  password = forms.CharField(max_length=64)
-  @classmethod
-  def user_is_allowed(cls,request):
-    return True
-  class Meta:
-    widgets = { 'password': forms.PasswordInput(), }
-
 class ProfileForm(RequestModelForm):
   @classmethod
   def user_is_allowed(cls,request):
