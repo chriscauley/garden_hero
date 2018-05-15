@@ -14,10 +14,13 @@ FORMS = {
 }
 
 def user_form_view(request,slug):
+  kwargs = {}
+  if slug == "profile":
+    kwargs['instance'] = request.user
   if slug == "login":
     form = AuthenticationForm(request,request.POST or None)
   else:
-    form = FORMS[slug](request)
+    form = FORMS[slug](request,**kwargs)
 
   if form.is_valid():
     if slug == "login":
