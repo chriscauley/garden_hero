@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> accepts "anchor" modifier prop 1`] = `
+<button
+  className="bcp-btn bcp-btn--anchor"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`<Button /> accepts "anchor-block" modifier prop 1`] = `
+<button
+  className="bcp-btn bcp-btn--anchor-block"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`<Button /> accepts "disabled" prop 1`] = `
+<button
+  className="bcp-btn bcp-btn--primary bcp-btn--disabled"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`<Button /> accepts "l" size prop 1`] = `
+<button
+  className="bcp-btn bcp-btn--l"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`<Button /> accepts "primary" modifier prop 1`] = `
+<button
+  className="bcp-btn bcp-btn--primary"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`<Button /> accepts "s" size prop 1`] = `
+<button
+  className="bcp-btn bcp-btn--s"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`<Button /> accepts "secondary" modifier prop 1`] = `
+<button
+  className="bcp-btn bcp-btn--secondary"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`<Button /> accepts "xl" size prop 1`] = `
+<button
+  className="bcp-btn bcp-btn--xl"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`<Button /> accepts "xs" size prop 1`] = `
+<button
+  className="bcp-btn bcp-btn--xs"
+  type="button"
+>
+  Click me
+</button>
+`;
+
+exports[`<Button /> renders correctly 1`] = `
+<button
+  className="bcp-btn"
+  type="button"
+>
+  Click me
+</button>
+`;

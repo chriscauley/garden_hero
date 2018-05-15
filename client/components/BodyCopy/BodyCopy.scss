@@ -1,0 +1,22 @@
+.gh-body-copy {
+  @include body-copy;
+  font-weight: $fontWeightRegular;
+  margin-bottom: em(10px);
+  word-break: break-word;
+  &--s {
+    @include heading-s;
+  }
+  &--l {
+    @include heading-l;
+  }
+  &--block {
+    display: block;
+    margin-bottom: 0;
+  }
+  &--bold {
+    font-weight: $fontWeightBold;
+  }
+  &--green {
+    color: $green;
+  }
+}

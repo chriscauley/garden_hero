@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BodyCopy /> accepts className prop 1`] = `
+<span
+  className="bcp-body-copy bcp-margin-top"
+>
+  Body copy text
+</span>
+`;
+
+exports[`<BodyCopy /> accepts modifier prop 1`] = `
+<span
+  className="bcp-body-copy bcp-body-copy--bold"
+>
+  Body copy text
+</span>
+`;
+
+exports[`<BodyCopy /> renders correctly 1`] = `
+<span
+  className="bcp-body-copy"
+>
+  Body copy text
+</span>
+`;
+
+exports[`<BodyCopy /> renders small text 1`] = `
+<span
+  className="bcp-body-copy bcp-body-copy--s"
+>
+  Body copy text
+</span>
+`;

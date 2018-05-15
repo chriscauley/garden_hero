@@ -21,3 +21,12 @@ python manage.py shell
 If everything is working properly you should see a python prompt. Exit with `ctrl+d` and get a dummy copy of the database from me and copy it to `main/db.sqlite3`. You can now start the server with:
 
 `python manage.py runserver`
+
+# Running Client Application
+
+Be sure you have the altest version of `Node` installed (`npm` comes with Node):
+https://nodejs.org/en/download/
+
+- Navigate into the project directory in the command line.
+- Run `npm install`.
+- Run `npm start` to run the Dev Server.
