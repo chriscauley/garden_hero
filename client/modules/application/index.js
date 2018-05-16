@@ -51,6 +51,10 @@ export const actions = {
 const initialState = {
   loaded: {
     data: false
+  },
+  form: {
+    formName: '',
+    fields: []
   }
 };
 
@@ -66,8 +70,9 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         ...action.meta,
-        forms: {
-          [action.payload.formName]: action.payload.fields
+        form: {
+          ...state.form,
+          ...action.payload
         }
       };
     default:

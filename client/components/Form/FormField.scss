@@ -1,0 +1,57 @@
+.gh-form-field {
+    margin-bottom: 1em;
+
+    &.is-invalid {
+        .gh-form-field-input {
+            border-color: $red;
+        }
+    }
+
+    &-label,
+    &-input {
+        display: block;
+        width: 100%;
+
+        @include responsive($widthLarge) {
+            max-width: em(215px);
+        }
+    }
+
+    &-label {
+        @include heading-s;
+        font-weight: $fontWeightBold;
+        margin-bottom: 0.5em;
+    }
+
+    &-input {
+        @include body-copy;
+        color: $textColor;
+        padding: 0.5em;
+        border: 1px solid $gray;
+        border-radius: $borderRadius;
+
+        &[disabled],
+        &[readonly] {
+            background-color: $gray;
+        }
+        &:focus {
+            border-color: $blueBright;
+        }
+        &::-ms-clear{
+         display: none;
+        }
+    
+    }
+    
+
+    &-error {
+        @include body-copy-s;
+        color: $red;
+        display: none; // Hidden by default
+        margin-top: 0.5em;
+
+        .is-invalid & {
+            display: block;
+        }
+    }
+}

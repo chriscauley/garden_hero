@@ -15,7 +15,7 @@ html,
 body {
   font-family: $fontFamily;
   font-size: $baseFontSize;
-  color: $grayDark;
+  color: $textColor;
   background-color: $white;
   margin: 0;
   padding: 0;
@@ -108,6 +108,7 @@ a, button {
 
 fieldset {
   display: inline;
+  width: 100%;
   border: 0;
   margin: 0;
   padding: 0;
