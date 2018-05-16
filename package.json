@@ -10,7 +10,8 @@
     "activate": "source .e/bin/activate",
     "requirements": "pip install -r requirements.txt",
     "pyshell": "python manage.py shell",
-    "pyserve": "python manage.py runserver"
+    "pyserve": "python manage.py runserver",
+    "gh": "npm run virtual && npm run activate && npm run requirements && npm run pyserve"
   },
   "keywords": [],
   "author": "",
