@@ -27,7 +27,7 @@ class BodyCopy extends Component {
       size,
       ...props
     } = this.props;
-    const mainClass = 'bcp-body-copy';
+    const mainClass = 'gh-body-copy';
     const modifierClass = buildClassName(
       bodyCopyProps.modifiers,
       modifier,

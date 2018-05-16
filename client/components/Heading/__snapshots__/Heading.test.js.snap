@@ -2,7 +2,7 @@
 
 exports[`<Heading /> accepts className prop 1`] = `
 <span
-  className="bcp-heading bcp-heading--l bcp-margin-top"
+  className="gh-heading gh-heading--l gh-margin-top"
 >
   Welcome
 </span>
@@ -10,7 +10,7 @@ exports[`<Heading /> accepts className prop 1`] = `
 
 exports[`<Heading /> accepts modifier prop 1`] = `
 <span
-  className="bcp-heading bcp-heading--inline bcp-heading--l"
+  className="gh-heading gh-heading--inline gh-heading--l"
 >
   Welcome
 </span>
@@ -18,7 +18,7 @@ exports[`<Heading /> accepts modifier prop 1`] = `
 
 exports[`<Heading /> accepts size prop 1`] = `
 <span
-  className="bcp-heading bcp-heading--l"
+  className="gh-heading gh-heading--l"
 >
   Welcome
 </span>
@@ -26,7 +26,7 @@ exports[`<Heading /> accepts size prop 1`] = `
 
 exports[`<Heading /> accepts status prop 1`] = `
 <span
-  className="bcp-heading bcp-heading--l bcp-heading--success"
+  className="gh-heading gh-heading--l gh-heading--success"
 >
   Welcome
 </span>
@@ -34,7 +34,7 @@ exports[`<Heading /> accepts status prop 1`] = `
 
 exports[`<Heading /> renders child elements 1`] = `
 <span
-  className="bcp-heading bcp-heading--l"
+  className="gh-heading gh-heading--l"
 >
   Welcome 
   <i />
@@ -43,7 +43,7 @@ exports[`<Heading /> renders child elements 1`] = `
 
 exports[`<Heading /> renders correctly 1`] = `
 <span
-  className="bcp-heading bcp-heading--l"
+  className="gh-heading gh-heading--l"
 >
   Welcome
 </span>
@@ -51,7 +51,7 @@ exports[`<Heading /> renders correctly 1`] = `
 
 exports[`<Heading /> renders section heading 1`] = `
 <span
-  className="bcp-heading bcp-heading--l bcp-heading--section"
+  className="gh-heading gh-heading--l gh-heading--section"
 >
   Welcome
   <span

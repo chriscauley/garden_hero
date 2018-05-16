@@ -35,13 +35,13 @@ class Button extends Component {
       type,
       ...props
     } = this.props;
-    const mainClass = 'bcp-btn';
+    const mainClass = 'gh-btn';
     const modifierClass = buildClassName(
       buttonProps.modifiers,
       modifier,
       mainClass
     );
-    const disabledClass = disabled ? 'bcp-btn--disabled' : false;
+    const disabledClass = disabled ? 'gh-btn--disabled' : false;
     const sizeClass = buildClassName(buttonProps.sizes, size, mainClass);
 
     return (
@@ -51,7 +51,7 @@ class Button extends Component {
           modifierClass,
           disabledClass,
           sizeClass,
-          { 'bcp-btn--full-width': fullWidth },
+          { 'gh-btn--full-width': fullWidth },
           className
         )}
         ref={reference}

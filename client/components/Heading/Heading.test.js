@@ -24,7 +24,7 @@ describe('<Heading />', () => {
 
   it('accepts className prop', () => {
     const component = renderer.create(
-      <Heading className="bcp-margin-top">Welcome</Heading>
+      <Heading className="gh-margin-top">Welcome</Heading>
     );
     const tree = component.toJSON();
 

@@ -5,18 +5,14 @@ import BodyCopy from './BodyCopy';
 
 describe('<BodyCopy />', () => {
   it('renders correctly', () => {
-    const component = renderer.create(
-      <BodyCopy>Body copy text</BodyCopy>
-    );
+    const component = renderer.create(<BodyCopy>Body copy text</BodyCopy>);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('accepts className prop', () => {
     const component = renderer.create(
-      <BodyCopy className="bcp-margin-top">
-        Body copy text
-      </BodyCopy>
+      <BodyCopy className="gh-margin-top">Body copy text</BodyCopy>
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -24,9 +20,7 @@ describe('<BodyCopy />', () => {
 
   it('accepts modifier prop', () => {
     const component = renderer.create(
-      <BodyCopy modifier="bold">
-        Body copy text
-      </BodyCopy>
+      <BodyCopy modifier="bold">Body copy text</BodyCopy>
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
@@ -34,9 +28,7 @@ describe('<BodyCopy />', () => {
 
   it('renders small text', () => {
     const component = renderer.create(
-      <BodyCopy size="s">
-        Body copy text
-      </BodyCopy>
+      <BodyCopy size="s">Body copy text</BodyCopy>
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();

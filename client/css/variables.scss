@@ -1,8 +1,6 @@
-// $fontPath: "https://edge.static-assets.top.comcast.net/staticsites/fonts/latest"
 //   !default;
-$fontFamily: 'Nunito',
-arial,
-sans-serif;
+$fontFamily: 'Nunito', arial, sans-serif;
+
 // Type Sizes ------------
 $fontSizeXLarge: 23px;
 $fontSizeLarge: 19px;
@@ -10,10 +8,12 @@ $fontSizeRegular: 16px;
 $fontSizeSmall: 14px;
 $bodyCopy: $fontSizeRegular;
 $baseFontSize: $fontSizeRegular;
+
 // Font Weights
 $fontWeightLight: 300;
 $fontWeightRegular: 400;
 $fontWeightBold: 700;
+
 // Colors ---------------
 $black: #000;
 $white: #fff;
@@ -35,9 +35,11 @@ $greenDark: #176447;
 $greenBright: #9EEBCE;
 $inactiveGray: #f8f8f8;
 $transGreen: rgba(24, 107, 76, 90);
+
 // Border Standards
 $borderRadius: 3px;
 $borderWidth: 1px;
+
 //-------------------------
 //	MEDIA QUERY VARIABLES
 //-------------------------
@@ -45,6 +47,7 @@ $widthSmall: 480px;
 $widthMedium: 720px;
 $widthLarge: 960px;
 $widthXLarge: 1200px;
+
 // Psuedo element background images
 $iconArrowDown: "<svg xmlns='http://www.w3.org/2000/svg' class='symbol-arrow-down' width='15' height='15' viewBox='0 0 26 13'><path d='M0 .64A.63.63 0 0 1 1.08.19L12 11.11 22.92.19a.63.63 0 0 1 .89.89L12.45 12.45a.63.63 0 0 1-.89 0L.18 1.08A.63.63 0 0 1 0 .63z' /></svg>";
 $iconArrowDownBlue: "<svg xmlns='http://www.w3.org/2000/svg' class='symbol-arrow-down' width='15' height='15' viewBox='0 0 26 13'><path stroke='#{$blue}' d='M0 .64A.63.63 0 0 1 1.08.19L12 11.11 22.92.19a.63.63 0 0 1 .89.89L12.45 12.45a.63.63 0 0 1-.89 0L.18 1.08A.63.63 0 0 1 0 .63z' /></svg>";

@@ -37,7 +37,8 @@ const initialState = {
       state: '',
       uuid: ''
     }
-  ]
+  ],
+  profile: {}
 };
 
 const reducer = (state = initialState, action = {}) => {

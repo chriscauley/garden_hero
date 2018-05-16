@@ -2,7 +2,7 @@
 
 exports[`<Button /> accepts "anchor" modifier prop 1`] = `
 <button
-  className="bcp-btn bcp-btn--anchor"
+  className="gh-btn gh-btn--anchor"
   type="button"
 >
   Click me
@@ -11,7 +11,7 @@ exports[`<Button /> accepts "anchor" modifier prop 1`] = `
 
 exports[`<Button /> accepts "anchor-block" modifier prop 1`] = `
 <button
-  className="bcp-btn bcp-btn--anchor-block"
+  className="gh-btn gh-btn--anchor-block"
   type="button"
 >
   Click me
@@ -20,7 +20,7 @@ exports[`<Button /> accepts "anchor-block" modifier prop 1`] = `
 
 exports[`<Button /> accepts "disabled" prop 1`] = `
 <button
-  className="bcp-btn bcp-btn--primary bcp-btn--disabled"
+  className="gh-btn gh-btn--primary gh-btn--disabled"
   type="button"
 >
   Click me
@@ -29,7 +29,7 @@ exports[`<Button /> accepts "disabled" prop 1`] = `
 
 exports[`<Button /> accepts "l" size prop 1`] = `
 <button
-  className="bcp-btn bcp-btn--l"
+  className="gh-btn gh-btn--l"
   type="button"
 >
   Click me
@@ -38,7 +38,7 @@ exports[`<Button /> accepts "l" size prop 1`] = `
 
 exports[`<Button /> accepts "primary" modifier prop 1`] = `
 <button
-  className="bcp-btn bcp-btn--primary"
+  className="gh-btn gh-btn--primary"
   type="button"
 >
   Click me
@@ -47,7 +47,7 @@ exports[`<Button /> accepts "primary" modifier prop 1`] = `
 
 exports[`<Button /> accepts "s" size prop 1`] = `
 <button
-  className="bcp-btn bcp-btn--s"
+  className="gh-btn gh-btn--s"
   type="button"
 >
   Click me
@@ -56,7 +56,7 @@ exports[`<Button /> accepts "s" size prop 1`] = `
 
 exports[`<Button /> accepts "secondary" modifier prop 1`] = `
 <button
-  className="bcp-btn bcp-btn--secondary"
+  className="gh-btn gh-btn--secondary"
   type="button"
 >
   Click me
@@ -65,7 +65,7 @@ exports[`<Button /> accepts "secondary" modifier prop 1`] = `
 
 exports[`<Button /> accepts "xl" size prop 1`] = `
 <button
-  className="bcp-btn bcp-btn--xl"
+  className="gh-btn gh-btn--xl"
   type="button"
 >
   Click me
@@ -74,7 +74,7 @@ exports[`<Button /> accepts "xl" size prop 1`] = `
 
 exports[`<Button /> accepts "xs" size prop 1`] = `
 <button
-  className="bcp-btn bcp-btn--xs"
+  className="gh-btn gh-btn--xs"
   type="button"
 >
   Click me
@@ -83,7 +83,7 @@ exports[`<Button /> accepts "xs" size prop 1`] = `
 
 exports[`<Button /> renders correctly 1`] = `
 <button
-  className="bcp-btn"
+  className="gh-btn"
   type="button"
 >
   Click me

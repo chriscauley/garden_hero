@@ -10,7 +10,7 @@ const endpoints = {
       url: '/api/schema/membership.SigninForm/',
       method: 'GET'
     },
-    member: {
+    profile: {
       baseURL: 'http://localhost:8000',
       url: '/api/schema/membership.ProfileForm/',
       method: 'GET'
