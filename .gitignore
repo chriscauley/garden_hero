@@ -13,3 +13,4 @@ env/*
 node_modules/*
 node_modules
 main/settings/local.py
+.vscode/*
