@@ -1,8 +1,9 @@
 ###Sitemap
 
 *   **Login** `"/"`
-*   schema endpoint: `"GET:/api/schema/membership.SigninForm/"` # not ready
-*   back-end endpoint: `"POST:/api/schema/membership.SigninForm/"` # not ready
+    *   back-end endpoint: `"POST:/auth/login_ajax/"`
+    *   parameters: username, password
+    *   response: either `{"error": [STRINGS]}` or `{ 'user': {'id': user.id, 'username': user.username, 'email': user.email } }`
 *   redirect to `"/members/:id"`
 *   **SignUp** `"/new"`
     *   schema endpoint: `GET:"/api/schema/membership.RegistrationForm/"`
