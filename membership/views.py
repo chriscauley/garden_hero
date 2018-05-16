@@ -14,10 +14,20 @@ FORMS = {
 }
 
 def user_form_view(request,slug):
+<<<<<<< HEAD
   if slug == "login":
     form = AuthenticationForm(request,request.POST or None)
   else:
     form = FORMS[slug](request)
+=======
+  kwargs = {}
+  if slug == "profile":
+    kwargs['instance'] = request.user
+  if slug == "login":
+    form = AuthenticationForm(request,request.POST or None)
+  else:
+    form = FORMS[slug](request,**kwargs)
+>>>>>>> 9c73f2088116b27746dfaa5dab4d590897bb07ff
 
   if form.is_valid():
     if slug == "login":
