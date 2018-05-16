@@ -6,7 +6,11 @@
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development",
-    "test": "jest"
+    "virtual": "virtualenv .e",
+    "activate": "source .e/bin/activate",
+    "requirements": "pip install -r requirements.txt",
+    "pyshell": "python manage.py shell",
+    "pyserve": "python manage.py runserver"
   },
   "keywords": [],
   "author": "",
@@ -60,7 +64,5 @@
     "webpack-cli": "^2.1.3",
     "webpack-dev-server": "^3.1.4"
   },
-  "modulePaths": [
-    "<rootDir>/client"
-  ]
+  "modulePaths": ["<rootDir>/client"]
 }
