@@ -1,16 +1,11 @@
 import { combineReducers } from 'redux';
-
-// Initial reducer
-const application = (state = {}, action = {}) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+import application from 'modules/application';
+import members from 'modules/members';
 
 // Root reducer
 const rootReducer = combineReducers({
-  application
+  application,
+  members
 });
 
 export default rootReducer;

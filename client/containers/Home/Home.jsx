@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import Nav from 'components/Nav/Nav';
 import { actions } from 'modules/application';
+import { actions as memberActions } from 'modules/members';
 
 export class Home extends Component {
   static propTypes = {
@@ -19,7 +20,7 @@ export class Home extends Component {
   }
 
   componentDidMount() {
-    this.actions.loadData();
+    this.actions.getForm('registration');
   }
 
   render() {
@@ -36,7 +37,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(Object.assign({}, actions), dispatch)
+  actions: bindActionCreators(
+    Object.assign({}, actions, memberActions),
+    dispatch
+  )
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

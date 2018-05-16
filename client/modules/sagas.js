@@ -1,14 +1,8 @@
-import { all, fork, take } from 'redux-saga/effects';
+import { all, fork } from 'redux-saga/effects';
+import applicationSaga from 'modules/application/sagas';
+import memberSaga from 'modules/members/sagas';
 
-function* initialSaga() {
-  while (true) {
-    const action = yield take('*');
-
-    console.log('ACTION:', action);
-  }
-}
-
-const sagas = [initialSaga];
+const sagas = [applicationSaga, memberSaga];
 
 function* rootSaga() {
   yield all(sagas.map(saga => fork(saga)));
