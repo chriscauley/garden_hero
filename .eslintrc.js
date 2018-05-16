@@ -27,7 +27,7 @@ module.exports = {
         "accessor-pairs": 2,
         "block-scoped-var": 2,
         "callback-return": 0,
-        "camelcase": 2,
+        "camelcase": 0,
         "complexity": 0,
         "consistent-return": 0,
         "consistent-this": [2, "self"],
