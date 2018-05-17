@@ -14,7 +14,7 @@ class FormField extends Component {
 
   render() {
     const { input, field, index, className, readOnly } = this.props;
-    const { label, name, type, error, required } = field;
+    const { label, name, type, error, required, maxlength } = field;
     const id = index ? `gh-${name}-${index}` : `gh-${name}`;
 
     return (
@@ -32,6 +32,7 @@ class FormField extends Component {
           id={name}
           type={type}
           required={required}
+          maxLength={maxlength}
           readOnly={readOnly}
           {...input}
         />

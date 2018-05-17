@@ -51,6 +51,7 @@ export class AppContainer extends Component {
     return (
       <div className="gh-main-content min-content-height" id="main" role="main">
         {this.renderRoutes(this.context)}
+        {/* Put a global spinner here */}
       </div>
     );
   }
