@@ -4,14 +4,13 @@ import { createBrowserHistory } from 'history';
 
 import rootReducer from 'modules';
 import rootSaga from 'modules/sagas';
-const appConfig = process.env.config || '/';
 
 // Create saga saga middleware
 const sagaMiddleware = createSagaMiddleware();
 
 // Create history
 export const history = createBrowserHistory({
-  basename: appConfig.BASE_NAME
+  basename: '/'
 });
 
 // Add enhancer for DevTools

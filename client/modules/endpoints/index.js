@@ -1,6 +1,6 @@
 const endpoints = {
   form: {
-    registration: {
+    signup: {
       baseURL: 'http://localhost:8000',
       url: '/api/schema/membership.RegistrationForm/',
       method: 'GET'

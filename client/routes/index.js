@@ -1,10 +1,13 @@
 import HomeView from 'pages/HomeView';
+import SignupView from 'pages/SignupView';
 import ErrorView from 'pages/ErrorView';
 
 // Export global Path references for use in routing, redirection, etc.
 export const appPaths = {
   home: '/home',
-  logout: '/logout'
+  login: '/login',
+  logout: '/logout',
+  signup: '/signup'
 };
 
 let routes = [
@@ -12,6 +15,16 @@ let routes = [
     path: '/',
     exact: true,
     component: HomeView
+  },
+  {
+    path: appPaths.signup,
+    exact: true,
+    component: SignupView
+  },
+  {
+    path: appPaths.login,
+    exact: true,
+    component: SignupView
   }
 ];
 
@@ -19,8 +32,7 @@ let routes = [
 routes = [
   ...routes,
   {
-    component: ErrorView,
-    layout: Error
+    component: ErrorView
   }
 ];
 

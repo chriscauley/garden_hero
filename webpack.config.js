@@ -14,6 +14,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'client'),
     compress: true,
     disableHostCheck: true,
+    historyApiFallback: true,
     host: 'localhost',
     hot: true,
     open: true,

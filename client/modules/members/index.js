@@ -4,7 +4,11 @@ const moduleName = 'members';
 // Action Types
 export const types = buildActionNames(moduleName, [
   'LOAD_DATA',
-  'LOAD_DATA_SUCCESS'
+  'LOAD_DATA_SUCCESS',
+  'MEMBER_SIGNUP',
+  'MEMBER_SIGNUP_SUCCESS',
+  'GET_PROFILE',
+  'GET_PROFILE_SUCCESS'
 ]);
 
 // Action Creators
@@ -17,7 +21,34 @@ const loadDataSuccess = payload => ({
   payload
 });
 
-export const actions = { loadData, loadDataSuccess };
+const memberSignup = payload => ({
+  type: types.MEMBER_SIGNUP,
+  payload
+});
+
+const memberSignupSuccess = payload => ({
+  type: types.MEMBER_SIGNUP_SUCCESS,
+  payload
+});
+
+const getProfile = payload => ({
+  type: types.GET_PROFILE,
+  payload
+});
+
+const getProfileSuccess = payload => ({
+  type: types.GET_PROFILE_SUCCESS,
+  payload
+});
+
+export const actions = {
+  loadData,
+  loadDataSuccess,
+  memberSignup,
+  memberSignupSuccess,
+  getProfile,
+  getProfileSuccess
+};
 
 const initialState = {
   loaded: {
@@ -44,6 +75,7 @@ const initialState = {
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case types.LOAD_DATA_SUCCESS:
+    case types.MEMBER_SIGNUP_SUCCESS:
       return {
         ...state,
         ...action.payload
