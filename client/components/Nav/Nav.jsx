@@ -16,10 +16,12 @@ class Nav extends Component {
 
     return (
       <div className={classNames(mainClass, className)} {...props}>
-        <Heading className="gh-logo" element="h3" size="l">
-          Garden Hero
-        </Heading>
-        {children}
+        <div className="container">
+          <Heading className="gh-logo" element="h3" size="l">
+            Garden Hero
+          </Heading>
+          {children}
+        </div>
       </div>
     );
   }

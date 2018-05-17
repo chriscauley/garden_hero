@@ -1,8 +1,12 @@
 .gh-main-nav {
     display: block;
-    padding: em(20px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: em(20px) 0;
     color: $white;
     background-color: $transGreen;
+
     .gh-heading {
         color: $white;
     }

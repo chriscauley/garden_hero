@@ -138,3 +138,19 @@ table th {
 .min-content-height {
   min-height: 300px;
 }
+
+.gh-main-content {
+  padding-top: 90px;
+}
+
+.container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include responsive($widthLarge) {
+    padding: 0;
+
+  }
+}
