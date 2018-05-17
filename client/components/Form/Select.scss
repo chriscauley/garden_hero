@@ -1,0 +1,30 @@
+.gh-select {
+    @include pseudo-dropdown-icon;
+    position: relative;
+
+    &-element {
+        @include body-copy;
+        color: $textColor;
+        padding: 0.5em 2em 0.5em 0.5em;
+        background-color: $white;
+        border: 1px solid $gray;
+        border-radius: $borderRadius;
+        width: 100%;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+
+        .is-invalid & {
+            border-color: $red;
+        }
+
+        &[disabled],
+        &[readonly] {
+            background-color: $gray;
+        }
+
+        &::-ms-expand { // Hide IE arrow
+            display: none;
+        }
+    }
+}

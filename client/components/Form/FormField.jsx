@@ -6,6 +6,7 @@ class FormField extends Component {
   static propTypes = {
     input: PropTypes.object.isRequired, // comes from Redux-form
     field: PropTypes.object.isRequired,
+    meta: PropTypes.object.isRequired,
     index: PropTypes.string,
     className: PropTypes.string,
     readOnly: PropTypes.bool,
@@ -13,24 +14,22 @@ class FormField extends Component {
   };
 
   render() {
-    const { input, field, index, className, readOnly } = this.props;
+    const { input, field, index, className, meta, readOnly } = this.props;
     const { label, name, type, error, required, maxlength } = field;
-    const id = index ? `gh-${name}-${index}` : `gh-${name}`;
+    const errorClass = meta.submitFailed && meta.error ? 'is-invalid' : false;
 
     return (
       <div
-        className={classnames('gh-form-field', className, {
-          'is-invalid': error
-        })}
+        className={classnames('gh-form-field', className, errorClass)}
         key={index}
       >
-        <label className="gh-form-field-label" htmlFor={id}>
+        <label className="gh-form-field-label" htmlFor={name}>
           {label}
         </label>
         <input
           className="gh-form-field-input"
           id={name}
-          type={type}
+          type={type && type !== 'select' ? type : 'text'}
           required={required}
           maxLength={maxlength}
           readOnly={readOnly}

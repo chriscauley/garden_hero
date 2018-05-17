@@ -1,0 +1,35 @@
+{
+  "rendered_content": null,
+  "errors": null,
+  "initial": {
+    "uuid": null,
+    "password": "",
+    "email": ""
+  },
+  "html_errors": [],
+  "form_title": null,
+  "schema": [
+    {
+      "help_text": "",
+      "label": "Email address",
+      "required": true,
+      "name": "email",
+      "maxlength": "254"
+    },
+    {
+      "name": "password",
+      "required": true,
+      "label": "Password",
+      "maxlength": "128",
+      "help_text": "",
+      "type": "password"
+    },
+    {
+      "help_text": "",
+      "required": false,
+      "type": "hidden",
+      "name": "uuid",
+      "label": null
+    }
+  ]
+}

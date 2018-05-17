@@ -1,58 +1,61 @@
-.gh-form-field {
-    margin-bottom: 1em;
+.gh-form {
 
-    &.is-invalid {
-        .gh-form-field-input {
-            border-color: $red;
-        }
+    &-actions {
+        margin: 20px 0;
     }
 
-    &-label,
-    &-input {
-        display: block;
-        width: 100%;
+    &-field {
+        margin-bottom: 1em;
 
-        @include responsive($widthLarge) {
-            max-width: em(215px);
+        &.is-invalid {
+            .gh-form-field-input {
+                border-color: $red;
+            }
         }
-    }
 
-    &-label {
-        @include heading-s;
-        font-weight: $fontWeightBold;
-        margin-bottom: 0.5em;
-    }
-
-    &-input {
-        @include body-copy;
-        color: $textColor;
-        padding: 0.5em;
-        border: 1px solid $gray;
-        border-radius: $borderRadius;
-        margin-bottom: 0;
-
-        &[disabled],
-        &[readonly] {
-            background-color: $gray;
-        }
-        &:focus {
-            border-color: $blueBright;
-        }
-        &::-ms-clear{
-         display: none;
-        }
-    
-    }
-    
-
-    &-error {
-        @include body-copy-s;
-        color: $red;
-        display: none; // Hidden by default
-        margin-top: 0.5em;
-
-        .is-invalid & {
+        &-label,
+        &-input {
             display: block;
+            width: 100%;
+        }
+
+        &-label {
+            @include heading-s;
+            font-weight: $fontWeightBold;
+            margin-bottom: 0.5em;
+        }
+
+        &-input {
+            @include body-copy;
+            color: $textColor;
+            padding: 0.5em;
+            border: 1px solid $gray;
+            border-radius: $borderRadius;
+            margin-bottom: 0;
+
+            &[disabled],
+            &[readonly] {
+                background-color: $gray;
+            }
+            &:focus {
+                border-color: $blueBright;
+            }
+            &::-ms-clear{
+            display: none;
+            }
+        
+        }
+        
+
+        &-error {
+            @include body-copy-s;
+            color: $red;
+            display: none; // Hidden by default
+            margin-top: 0.5em;
+
+            .is-invalid & {
+                display: block;
+            }
         }
     }
 }

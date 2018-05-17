@@ -7,6 +7,7 @@ import { reduxForm, Field } from 'redux-form';
 
 import Button from 'components/Button/Button';
 import FormField from 'components/Form/FormField';
+import Select from 'components/Form/Select';
 
 class Form extends Component {
   static propTypes = {
@@ -15,6 +16,42 @@ class Form extends Component {
     formName: PropTypes.string.isRequired,
     handleSubmit: PropTypes.func.isRequired
   };
+
+  renderField(field, i = null) {
+    const isSelect = field.type === 'select';
+
+    if (isSelect) {
+      return (
+        <Field
+          key={i}
+          name={field.name}
+          component={Select}
+          field={field}
+          className="cell"
+        >
+          {field.choices.map((option, index) => {
+            const output = { value: option[0], label: option[1] };
+
+            return (
+              <option key={index} value={output.value}>
+                {output.label}
+              </option>
+            );
+          })}
+        </Field>
+      );
+    } else {
+      return (
+        <Field
+          key={i}
+          name={field.name}
+          component={FormField}
+          field={field}
+          className={field.type !== 'hidden' ? 'cell' : null}
+        />
+      );
+    }
+  }
 
   render() {
     const { className, inputs, handleSubmit } = this.props;
@@ -31,15 +68,9 @@ class Form extends Component {
         <fieldset>
           <legend className="visibly-hidden">Form Fields</legend>
           <div className="grid-x grid-margin-x">
-            {inputs.map((field, i) =>
-              <Field
-                key={i}
-                name={field.name}
-                component={FormField}
-                field={field}
-                className="cell"
-              />
-            )}
+            {inputs.map((field, i) => {
+              return this.renderField(field, i);
+            })}
           </div>
         </fieldset>
 
