@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
-import Nav from 'components/Nav/Nav';
 import Form from 'components/Form/Form';
 
 import { actions } from 'modules/application';
@@ -28,7 +27,7 @@ export class Home extends Component {
   }
 
   handleSubmit(values) {
-    console.warn('handlesubmit values:', values);
+    console.warn('values:', values);
   }
 
   get renderForm() {
@@ -38,14 +37,17 @@ export class Home extends Component {
       return null;
     }
     return (
-      <Form method="post" fields={fields} handleSubmit={this.handleSubmit} />
+      <Form
+        inputs={fields}
+        onSubmit={this.handleSubmit}
+        formName="registration"
+      />
     );
   }
 
   render() {
     return (
       <div className="gh-home">
-        <Nav />
         {this.renderForm}
       </div>
     );

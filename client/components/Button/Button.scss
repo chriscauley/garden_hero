@@ -6,6 +6,7 @@
   border: 0;
   padding: 0;
   cursor: pointer;
+
   @include responsive($widthMedium) {
     display: inline-block;
     width: auto;
@@ -37,45 +38,53 @@
   &--secondary {
     min-width: 9em;
     padding: 0.684em 1.579em 0.632em;
-    border-radius: 5em;
+    font-weight: $fontWeightBold;
+
     &.gh-btn--s {
       padding: 0.625em 1.875em;
     }
   }
+
   &--primary {
     background-color: $blue;
     color: $white;
+
     &:hover,
     &:focus,
     &:active {
-      background-color: $blueBright;
+      opacity: .9;
+
     }
+
     &[disabled] {
       background-color: $gray;
     }
   }
+
   &--secondary {
-    border: 1px solid $blue;
-    color: $blue;
+    color: $white;
+    background-color: $blue;
+
     &:hover,
     &:focus,
     &:active {
-      border-color: $blueBright;
-      color: $blueBright;
+      opacity: .9;
     }
   }
+
   &--disabled {
     background-color: $gray;
     cursor: default;
+
     &:hover,
     &:focus,
     &:active {
       background-color: $gray;
     }
+
     &.gh-btn--secondary {
-      background-color: transparent;
-      border-color: $grayDark;
-      color: $grayDark;
+      background-color: $orange;
+      color: $white;
     }
   }
   &--full-width {

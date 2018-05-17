@@ -29,6 +29,7 @@
         padding: 0.5em;
         border: 1px solid $gray;
         border-radius: $borderRadius;
+        margin-bottom: 0;
 
         &[disabled],
         &[readonly] {
